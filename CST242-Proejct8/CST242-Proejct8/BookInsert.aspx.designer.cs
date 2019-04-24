@@ -22,6 +22,15 @@ namespace CST242_Proejct8 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// SqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource;
+        
+        /// <summary>
         /// bookCodeTextBox control.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace CST242_Proejct8 {
         protected global::System.Web.UI.WebControls.TextBox bookPriceTextBox;
         
         /// <summary>
-        /// SqlDataSourceBooks control.
+        /// status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceBooks;
+        protected global::System.Web.UI.WebControls.Label status;
         
         /// <summary>
         /// bookInsertButton control.

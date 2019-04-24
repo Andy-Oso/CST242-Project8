@@ -38,28 +38,27 @@
         </div>
 
         <div id="bookTable">
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="BookCode" DataSourceID="SqlDataSource1">
-                <Columns>
-                    <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                    <asp:BoundField DataField="Type" HeaderText="Type" SortExpression="Type" />
-                    <asp:BoundField DataField="PublisherCode" HeaderText="PublisherCode" SortExpression="PublisherCode" />
-                    <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
-                    <asp:BoundField DataField="BookCode" HeaderText="BookCode" ReadOnly="True" SortExpression="BookCode" />
-                </Columns>
-                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
-                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
-                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
-                <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#FFF1D4" />
-                <SortedAscendingHeaderStyle BackColor="#B95C30" />
-                <SortedDescendingCellStyle BackColor="#F1E5CE" />
-                <SortedDescendingHeaderStyle BackColor="#93451F" />
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" AllowPaging="True" AllowSorting="True">
+                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510"></FooterStyle>
+
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                <PagerStyle HorizontalAlign="Center" ForeColor="#8C4510"></PagerStyle>
+
+                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510"></RowStyle>
+
+                <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                <SortedAscendingCellStyle BackColor="#FFF1D4"></SortedAscendingCellStyle>
+
+                <SortedAscendingHeaderStyle BackColor="#B95C30"></SortedAscendingHeaderStyle>
+
+                <SortedDescendingCellStyle BackColor="#F1E5CE"></SortedDescendingCellStyle>
+
+                <SortedDescendingHeaderStyle BackColor="#93451F"></SortedDescendingHeaderStyle>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:BooksConnectionString %>" 
-                ProviderName="<%$ ConnectionStrings:BooksConnectionString.ProviderName %>" 
-                SelectCommand="SELECT [BookCode], [PublisherCode], [Type], [Title], [Price] FROM [Book]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+            
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BookTableConnectionString %>" ProviderName="<%$ ConnectionStrings:BookTableConnectionString.ProviderName %>" SelectCommand="SELECT [BookCode], [PublisherCode], [Title], [Type], [Price] FROM [Book]"></asp:SqlDataSource>
             
             <p id="Image buttons">
             <asp:ImageButton ID="bookInsertButton" runat="server" ImageUrl="~/Images/book_insert_icon.png" Height="40px" Width="40px" 

@@ -36,6 +36,30 @@
             <img id ="secondaryBannerImage" src="Images/book_insert_icon.png" /> Insert Book <img id="mainBannerImage" src="Images/books_banner.png" align="right" />
         </div>
         <div id="bookInsert">
+            <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BooksConnectionString %>" 
+                DeleteCommand="DELETE FROM [Book] WHERE [BookCode] = ?" 
+                InsertCommand="INSERT INTO [Book] ([BookCode], [Title], [PublisherCode], [Type], [Price]) VALUES (?, ?, ?, ?, ?)" 
+                ProviderName="<%$ ConnectionStrings:BooksConnectionString.ProviderName %>" 
+                SelectCommand="SELECT [BookCode], [Title], [PublisherCode], [Type], [Price] FROM [Book]" 
+                UpdateCommand="UPDATE [Book] SET [Title] = ?, [PublisherCode] = ?, [Type] = ?, [Price] = ? WHERE [BookCode] = ?">
+                <DeleteParameters>
+                    <asp:Parameter Name="BookCode" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="BookCode" Type="String" />
+                    <asp:Parameter Name="Title" Type="String" />
+                    <asp:Parameter Name="PublisherCode" Type="String" />
+                    <asp:Parameter Name="Type" Type="String" />
+                    <asp:Parameter Name="Price" Type="Decimal" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Title" Type="String" />
+                    <asp:Parameter Name="PublisherCode" Type="String" />
+                    <asp:Parameter Name="Type" Type="String" />
+                    <asp:Parameter Name="Price" Type="Decimal" />
+                    <asp:Parameter Name="BookCode" Type="String" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
             <p>
                 <asp:Label runat="server" Text="Book Code   "></asp:Label>
                 <asp:TextBox ID="bookCodeTextBox" runat="server" style="margin-left: 21px"></asp:TextBox>
@@ -60,29 +84,9 @@
                 <asp:Label runat="server" Text="Price   "></asp:Label>
                 <asp:TextBox ID="bookPriceTextBox" runat="server" style="margin-left: 58px"></asp:TextBox>
             </p>
-
-            <asp:SqlDataSource ID="SqlDataSourceBooks" runat="server"
-                ConnectionString="<%$ ConnectionStrings:BooksConnectionString %>"
-                ProviderName="<%$ ConnectionStrings:BooksConnectionString.ProviderName %>"
-                SelectCommand="SELECT [Title], [PublisherCode], [Type], [Price], [BookCode] FROM [Book]" 
-                DeleteCommand="DELETE FROM [Book] WHERE [BookCode] = ?" 
-                InsertCommand="INSERT INTO [Book] ([Title], [PublisherCode], [Type], [Price], [BookCode]) VALUES (?, ?, ?, ?, ?)" 
-                UpdateCommand="UPDATE [Book] SET [Title] = ?, [PublisherCode] = ?, [Type] = ?, [Price] = ? WHERE [BookCode] = ?">
-                <InsertParameters>
-                    <asp:Parameter Name="Title" Type="String"></asp:Parameter>
-                    <asp:Parameter Name="PublisherCode" Type="String"></asp:Parameter>
-                    <asp:Parameter Name="Type" Type="String"></asp:Parameter>
-                    <asp:Parameter Name="Price" Type="Decimal"></asp:Parameter>
-                    <asp:Parameter Name="BookCode" Type="String"></asp:Parameter>
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="Title" Type="String"></asp:Parameter>
-                    <asp:Parameter Name="PublisherCode" Type="String"></asp:Parameter>
-                    <asp:Parameter Name="Type" Type="String"></asp:Parameter>
-                    <asp:Parameter Name="Price" Type="Decimal"></asp:Parameter>
-                    <asp:Parameter Name="BookCode" Type="String"></asp:Parameter>
-                </UpdateParameters>
-            </asp:SqlDataSource>
+            <p>
+                <asp:Label runat="server" ID="status" Text="[Waiting for input...]"></asp:Label>
+            </p>
         </div>
         <div id="buttons">
              <p>

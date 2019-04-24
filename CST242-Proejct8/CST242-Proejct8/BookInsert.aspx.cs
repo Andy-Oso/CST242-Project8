@@ -20,14 +20,21 @@ namespace CST242_Proejct8
         {
             try
             {
-                SqlDataSourceBooks.InsertParameters["BookCode"].DefaultValue = bookCodeTextBox.Text;
-                SqlDataSourceBooks.InsertParameters["PublisherCode"].DefaultValue = publisherCodeTextBox.Text;
-                SqlDataSourceBooks.InsertParameters["Type"].DefaultValue = bookTypeTextBox.Text;
-                SqlDataSourceBooks.InsertParameters["Price"].DefaultValue = bookPriceTextBox.Text;
-                SqlDataSourceBooks.InsertParameters["Title"].DefaultValue = bookTitleTextBox.Text;
+                SqlDataSource.InsertParameters["BookCode"].DefaultValue = bookCodeTextBox.Text;
+                SqlDataSource.InsertParameters["PublisherCode"].DefaultValue = publisherCodeTextBox.Text;
+                SqlDataSource.InsertParameters["Type"].DefaultValue = bookTypeTextBox.Text;
+                SqlDataSource.InsertParameters["Title"].DefaultValue = bookTitleTextBox.Text;
+                SqlDataSource.InsertParameters["Price"].DefaultValue = bookPriceTextBox.Text;
+                SqlDataSource.Insert();
+                status.ForeColor = System.Drawing.Color.Green;
+                status.Text = "[Input Good!]";
                 Response.Redirect("BookTable.aspx");
             }
-            catch { }
+            catch
+            {
+                status.ForeColor = System.Drawing.Color.Red;
+                status.Text = "[Exception caught, check input!]";
+            }
         }
     }
 }

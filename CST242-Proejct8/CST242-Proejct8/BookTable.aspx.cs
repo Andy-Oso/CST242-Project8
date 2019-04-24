@@ -13,5 +13,9 @@ namespace CST242_Proejct8
         {
 
         }
+        // the event handler for clicking the search button
+        protected void bookSearchButton_Click(object sender, ImageClickEventArgs e) => Response.Redirect("BookSearch.aspx");
+        // the event handler for clicking the insert button
+        protected void bookInsertButton_Click(object sender, ImageClickEventArgs e) => Response.Redirect("BookInsert.aspx");
     }
 }

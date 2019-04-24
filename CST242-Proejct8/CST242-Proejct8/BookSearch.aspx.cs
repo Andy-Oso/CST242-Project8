@@ -13,5 +13,12 @@ namespace CST242_Proejct8
         {
 
         }
+        // event handler for the image button to go back to the table
+        protected void BookTable_Click(object sender, ImageClickEventArgs e) => Response.Redirect("BookTable.aspx");
+        // event handler for searching for a book, takes the selected value
+        protected void BookSearchButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("BookDetail.aspx?BookCode=" + DropDownList1.SelectedValue);
+        }
     }
 }

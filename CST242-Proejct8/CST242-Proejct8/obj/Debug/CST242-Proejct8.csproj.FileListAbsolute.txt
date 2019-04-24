@@ -1,0 +1,9 @@
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\bin\CST242-Proejct8.dll.config
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\bin\CST242-Proejct8.dll
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\bin\CST242-Proejct8.pdb
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\obj\Debug\CST242-Proejct8.csprojAssemblyReference.cache
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\obj\Debug\CST242-Proejct8.csproj.CoreCompileInputs.cache
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\obj\Debug\CST242-Proejct8.csproj.CopyComplete
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\obj\Debug\CST242-Proejct8.dll
+C:\Users\Rubick\Source\Repos\CST242-Project8\CST242-Proejct8\CST242-Proejct8\obj\Debug\CST242-Proejct8.pdb
